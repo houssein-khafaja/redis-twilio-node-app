@@ -12,31 +12,13 @@ var rs = require("redisscan");
 
 // temp object to be used outside Twillio
 var event = {
-    ToCountry: 'CA',
-    ToState: 'Greater Toronto Area',
-    SmsMessageSid: 'SM4466686a33250e16752a03e17dffda72',
-    NumMedia: '0',
-    ToCity: 'Hamilton',
-    FromZip: 'L8H 5W8',
-    SmsSid: 'SM4466686a33250e16752a03e17dffda72',
-    FromState: 'ON',
-    SmsStatus: 'received',
-    FromCity: 'HAMILTON',
-    Body: 'list',
-    FromCountry: 'CA',
-    To: '+12897688362',
-    ToZip: '',
-    NumSegments: '1',
-    MessageSid: 'SM4466686a33250e16752a03e17dffda72',
-    AccountSid: 'ACf0eb149ace17632b947477a4134f8021',
-    From: '+19055177524',
-    ApiVersion: '2010-04-0'
+    ...
 };
 
 // set up our api clients
-var redisClient = redis.createClient(18804, "redis-18804.c89.us-east-1-3.ec2.cloud.redislabs.com", { "password": "XXXXXXXXXXXXXXX" });
+var redisClient = redis.createClient(18804, "redis-xxxxxxxx.redislabs.com", { "password": "XXXXXXXXXXXXXXX" });
 let twiml = new Twilio.twiml.MessagingResponse();
-const imdbClient = new imdb.Client({ apiKey: '162935c9' });
+const imdbClient = new imdb.Client({ apiKey: '...' });
 
 // redist event listeners
 redisClient.on("error", function(err)
